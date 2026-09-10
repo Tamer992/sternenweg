@@ -335,66 +335,125 @@ header, main, footer { position: relative; z-index: 1; }
 --------------------------------------------------- */
 .tunnel {
   position: relative;
-  height: 42vh;
-  min-height: 280px;
-  max-height: 460px;
+  height: 48vh;
+  min-height: 340px;
+  max-height: 560px;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .tunnel__field {
   position: absolute;
   inset: 0;
-  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
-  mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 48%, transparent 92%);
+  mask-image: radial-gradient(closest-side, #000 48%, transparent 92%);
 }
 
-.tunnel__glow {
+/* Faint radiating beams, like light through an aperture */
+.tunnel__rays {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+  width: 1100px;
+  height: 1100px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(201, 162, 74, 0.95), rgba(201, 162, 74, 0.25) 45%, transparent 72%);
-  filter: blur(4px);
+  background: conic-gradient(from 0deg,
+    transparent 0deg, rgba(201, 162, 74, 0.16) 6deg, transparent 16deg,
+    transparent 58deg, rgba(201, 162, 74, 0.11) 65deg, transparent 76deg,
+    transparent 122deg, rgba(201, 162, 74, 0.14) 130deg, transparent 141deg,
+    transparent 187deg, rgba(201, 162, 74, 0.09) 194deg, transparent 205deg,
+    transparent 244deg, rgba(201, 162, 74, 0.15) 252deg, transparent 263deg,
+    transparent 312deg, rgba(201, 162, 74, 0.11) 320deg, transparent 332deg,
+    transparent 360deg);
+  filter: blur(22px);
+  mix-blend-mode: screen;
 }
 
+/* Soft concentric halos drifting outward, like ripples of light rather than drawn circles */
 .tunnel__ring {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  border: 1px solid var(--accent);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, transparent 60%, rgba(201, 162, 74, 0.5) 68%, rgba(201, 162, 74, 0.12) 76%, transparent 86%);
+  filter: blur(2px);
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+.tunnel__halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, transparent 50%, rgba(201, 162, 74, 0.16) 66%, transparent 84%);
+  filter: blur(8px);
+}
+
+.tunnel__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(255, 246, 222, 0.95) 0%,
+    rgba(232, 197, 122, 0.75) 20%,
+    rgba(201, 162, 74, 0.38) 42%,
+    rgba(201, 162, 74, 0.1) 64%,
+    transparent 78%);
+  filter: blur(3px);
+}
+
+.tunnel__spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
   opacity: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .tunnel__glow {
-    animation: tunnelBreathe 4.5s ease-in-out infinite;
-  }
-  .tunnel__ring {
-    animation: tunnelPulse 6s var(--ease-soft) infinite;
-  }
+  .tunnel__rays   { animation: tunnelRotate 260s linear infinite; }
+  .tunnel__core   { animation: tunnelBreathe 9s ease-in-out infinite; }
+  .tunnel__halo   { animation: tunnelBreathe 9s ease-in-out infinite reverse; }
+  .tunnel__ring   { animation: tunnelRingPulse 14s ease-in-out infinite; }
+  .tunnel__spark  { animation: tunnelTwinkle 7s ease-in-out infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tunnel__ring {
     transform: translate(-50%, -50%) scale(var(--s, 1));
-    opacity: var(--o, 0.2);
+    opacity: var(--o, 0.16);
   }
+  .tunnel__spark { opacity: 0.5; }
 }
+
+@keyframes tunnelRotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
 
 @keyframes tunnelBreathe {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-  50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+  50%      { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
 }
 
-@keyframes tunnelPulse {
-  0%   { transform: translate(-50%, -50%) scale(0.15); opacity: 0.85; }
-  65%  { opacity: 0.05; }
-  100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; }
+@keyframes tunnelRingPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.25); opacity: 0; }
+  12%  { opacity: 0.8; }
+  55%  { opacity: 0.15; }
+  100% { transform: translate(-50%, -50%) scale(2.1); opacity: 0; }
+}
+
+@keyframes tunnelTwinkle {
+  0%, 100% { opacity: 0; }
+  50%      { opacity: 0.8; }
 }
 
 /* ---------------------------------------------------
