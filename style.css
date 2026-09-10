@@ -321,7 +321,7 @@ header, main, footer { position: relative; z-index: 1; }
   .hero__zodiac .draw { animation: chartDraw 1s var(--ease) forwards; }
   .hero__zodiac .fade-fill { animation: chartFade 0.8s var(--ease) forwards; }
   .hero__zodiac .ring-rotate { animation: chartSpin 240s linear infinite; }
-  .hero__zodiac .wheel-rotate { animation: chartSpin 340s linear infinite reverse; }
+  .hero__zodiac .wheel-rotate { animation: chartSpin 340s linear infinite; }
   .hero__zodiac .planet-rotate { animation: chartSpin 170s linear infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
