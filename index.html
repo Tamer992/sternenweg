@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sternenweg – Raum für Körper, Geist und Seele</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">Sternenweg</a>
+    <nav class="nav__links">
+      <a href="#philosophie">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="btn btn--ghost nav__cta">Kontakt aufnehmen</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero__text">
+      <h1 class="hero__headline">Innere Klarheit.<br><em>Äußere</em> Kraft.</h1>
+      <p class="hero__subtext">Ganzheitliche Begleitung für Körper, Geist und Seele, individuell auf dich abgestimmt.</p>
+      <div class="hero__actions">
+        <a href="#kontakt" class="btn btn--primary">Kontakt aufnehmen</a>
+        <a href="#philosophie" class="btn btn--text">Mehr erfahren <span>&rarr;</span></a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__glow"></div>
+      <div class="hero__ring"></div>
+      <svg class="hero__zodiac" viewBox="0 0 400 400" role="img" aria-label="Tierkreis mit den zwölf Sternzeichen und den klassischen Planeten">
+        <defs>
+          <radialGradient id="zodiacBg" cx="50%" cy="42%" r="70%">
+            <stop offset="0%" stop-color="#1c2b21"/>
+            <stop offset="100%" stop-color="#0d1611"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="200" cy="200" r="200" fill="url(#zodiacBg)"/>
+        <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a24b" stroke-opacity="0.28" stroke-width="1"/>
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#c9a24b" stroke-opacity="0.16" stroke-width="1"/>
+
+        <g class="ring-rotate">
+          <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a24b" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="1 7" stroke-linecap="round"/>
+        </g>
+
+        <g stroke="#c9a24b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <!-- Aries -->
+          <path class="draw" pathLength="1" style="animation-delay:.10s" transform="translate(200,45)" d="M -7,-6 C -7,-11 -3,-14 0,-9 C 0,-9 0,10 0,10 M 7,-6 C 7,-11 3,-14 0,-9"/>
+          <!-- Taurus -->
+          <g transform="translate(278,66)">
+            <circle class="draw" pathLength="1" style="animation-delay:.15s" cx="0" cy="4" r="6"/>
+            <path class="draw" pathLength="1" style="animation-delay:.15s" d="M -7,-10 C -7,-2 7,-2 7,-10"/>
+          </g>
+          <!-- Gemini -->
+          <path class="draw" pathLength="1" style="animation-delay:.20s" transform="translate(334,123)" d="M -6,-9 L -6,9 M 6,-9 L 6,9 M -9,-9 L -3,-9 M 3,-9 L 9,-9 M -9,9 L -3,9 M 3,9 L 9,9"/>
+          <!-- Cancer -->
+          <g transform="translate(355,200)">
+            <circle class="draw" pathLength="1" style="animation-delay:.25s" cx="-6" cy="-2" r="3"/>
+            <circle class="draw" pathLength="1" style="animation-delay:.25s" cx="6" cy="2" r="3"/>
+            <path class="draw" pathLength="1" style="animation-delay:.25s" d="M -9,3 C -9,10 3,10 3,1 C 3,-6 9,-6 9,-1"/>
+          </g>
+          <!-- Leo -->
+          <path class="draw" pathLength="1" style="animation-delay:.30s" transform="translate(334,278)" d="M -8,10 C -13,4 -9,-9 -1,-9 C 6,-9 8,-2 3,2 C -1,5 0,10 5,10 C 9,10 10,6 8,3"/>
+          <!-- Virgo -->
+          <path class="draw" pathLength="1" style="animation-delay:.35s" transform="translate(278,334)" d="M -9,-9 L -9,7 M -9,-9 C -9,7 -2,7 -2,-3 L -2,-9 M -2,-9 L -2,7 M 5,-9 C 5,7 12,4 12,-2 C 12,-8 5,-6 5,0"/>
+          <!-- Libra -->
+          <path class="draw" pathLength="1" style="animation-delay:.40s" transform="translate(200,355)" d="M -10,10 L 10,10 M -8,-2 C -8,-9 -2,-11 0,-9 C 2,-11 8,-9 8,-2 C 8,3 -8,3 -8,-2"/>
+          <!-- Scorpio -->
+          <path class="draw" pathLength="1" style="animation-delay:.45s" transform="translate(123,334)" d="M -10,-9 L -10,7 M -10,-9 C -10,7 -3,7 -3,-3 L -3,-9 M -3,-9 L -3,7 M 4,-9 C 4,7 11,4 11,-2 L 15,4 M 11,-2 L 8,3"/>
+          <!-- Sagittarius -->
+          <path class="draw" pathLength="1" style="animation-delay:.50s" transform="translate(66,278)" d="M -9,9 L 9,-9 M 1,-9 L 9,-9 L 9,-1 M -3,-4 L 3,2"/>
+          <!-- Capricorn -->
+          <path class="draw" pathLength="1" style="animation-delay:.55s" transform="translate(45,200)" d="M -9,-9 L -9,6 C -9,10 -3,10 -3,6 L -3,-9 C -3,3 4,3 4,-3 C 4,3 10,0 10,5 C 10,10 5,10 4,7"/>
+          <!-- Aquarius -->
+          <path class="draw" pathLength="1" style="animation-delay:.60s" transform="translate(66,123)" d="M -10,-3 C -7,-7 -3,-7 0,-3 C 3,1 7,1 10,-3 M -10,4 C -7,0 -3,0 0,4 C 3,8 7,8 10,4"/>
+          <!-- Pisces -->
+          <path class="draw" pathLength="1" style="animation-delay:.65s" transform="translate(123,66)" d="M -8,-9 C -12,-3 -12,3 -8,9 M 8,-9 C 12,-3 12,3 8,9 M -9,0 L 9,0"/>
+        </g>
+
+        <g stroke="#c9a24b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <!-- Sonne -->
+          <g transform="translate(200,148)">
+            <circle class="draw" pathLength="1" style="animation-delay:.85s" r="5"/>
+            <circle class="fade-fill" style="animation-delay:1.05s;--fo:1" r="1" fill="#c9a24b" stroke="none"/>
+          </g>
+          <!-- Merkur -->
+          <g transform="translate(152,173)">
+            <path class="draw" pathLength="1" style="animation-delay:.90s" d="M -3,-7 A 3 3 0 1 1 3,-7"/>
+            <circle class="draw" pathLength="1" style="animation-delay:.90s" cy="-2" r="3.5"/>
+            <path class="draw" pathLength="1" style="animation-delay:.90s" d="M 0,1.5 L 0,7 M -2.5,5 L 2.5,5"/>
+          </g>
+          <!-- Venus -->
+          <g transform="translate(248,173)">
+            <circle class="draw" pathLength="1" style="animation-delay:.95s" cy="-3" r="4"/>
+            <path class="draw" pathLength="1" style="animation-delay:.95s" d="M 0,1 L 0,8 M -3,5 L 3,5"/>
+          </g>
+          <!-- Mond -->
+          <path class="fade-fill" style="animation-delay:1s;--fo:1" transform="translate(200,252)" d="M 3,-6 C -2.5,-6 -2.5,6 3,6 C 0,4 0,-4 3,-6 Z" fill="#c9a24b" stroke="none"/>
+          <!-- Mars -->
+          <g transform="translate(152,227)">
+            <circle class="draw" pathLength="1" style="animation-delay:1.05s" cx="-1" cy="2" r="4"/>
+            <path class="draw" pathLength="1" style="animation-delay:1.05s" d="M 2,-1 L 7,-6 M 3,-6 L 7,-6 L 7,-2"/>
+          </g>
+          <!-- Jupiter -->
+          <path class="draw" pathLength="1" style="animation-delay:1.1s" transform="translate(248,227)" d="M -4,-6 C -7,-3 -7,0 -3,0 L 3,0 M 1,-6 L 1,7"/>
+        </g>
+
+        <g fill="#f1ece0">
+          <circle class="fade-fill" style="animation-delay:1.3s;--fo:0.7" cx="90" cy="90" r="1.4"/>
+          <circle class="fade-fill" style="animation-delay:1.4s;--fo:0.5" cx="320" cy="70" r="1.1"/>
+          <circle class="fade-fill" style="animation-delay:1.35s;--fo:0.6" cx="345" cy="310" r="1.6"/>
+          <circle class="fade-fill" style="animation-delay:1.45s;--fo:0.5" cx="70" cy="330" r="1.2"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="intro" id="philosophie">
+    <div class="intro__mark reveal">✧</div>
+    <h2 class="intro__headline reveal">Ein Raum für dich</h2>
+    <p class="intro__text reveal">
+      Sternenweg begleitet Menschen, die innehalten und sich neu ausrichten wollen.
+      Mit Ruhe, Erfahrung und einem Blick für das, was wirklich trägt, entsteht ein
+      Weg, der zu dir passt, Schritt für Schritt.
+    </p>
+  </section>
+</main>
+
+<footer class="footer" id="kontakt">
+  <div class="footer__inner">
+    <span class="footer__logo">Sternenweg</span>
+    <p class="footer__meta">© 2026 Sternenweg. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+
+</body>
+</html>
