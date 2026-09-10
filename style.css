@@ -278,6 +278,8 @@ header, main, footer { position: relative; z-index: 1; }
   position: relative;
   z-index: 2;
   display: block;
+  box-shadow: 0 0 1px 1px rgba(201, 162, 74, 0.18),
+              0 0 40px 4px rgba(201, 162, 74, 0.1);
 }
 
 .hero__ring {
