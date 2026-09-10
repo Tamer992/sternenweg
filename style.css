@@ -330,6 +330,74 @@ header, main, footer { position: relative; z-index: 1; }
 @keyframes chartSpin { to { transform: rotate(360deg); } }
 
 /* ---------------------------------------------------
+   Light tunnel: transitional breathing moment
+   between hero and intro
+--------------------------------------------------- */
+.tunnel {
+  position: relative;
+  height: 42vh;
+  min-height: 280px;
+  max-height: 460px;
+  overflow: hidden;
+}
+
+.tunnel__field {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
+}
+
+.tunnel__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(201, 162, 74, 0.95), rgba(201, 162, 74, 0.25) 45%, transparent 72%);
+  filter: blur(4px);
+}
+
+.tunnel__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tunnel__glow {
+    animation: tunnelBreathe 4.5s ease-in-out infinite;
+  }
+  .tunnel__ring {
+    animation: tunnelPulse 6s var(--ease-soft) infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tunnel__ring {
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+    opacity: var(--o, 0.2);
+  }
+}
+
+@keyframes tunnelBreathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+@keyframes tunnelPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.15); opacity: 0.85; }
+  65%  { opacity: 0.05; }
+  100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; }
+}
+
+/* ---------------------------------------------------
    Intro / Philosophy teaser
 --------------------------------------------------- */
 .intro {
