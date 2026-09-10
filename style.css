@@ -2,8 +2,8 @@
    Tokens
 --------------------------------------------------- */
 :root {
-  --bg:        #0d1611;
-  --bg-raised: #141f18;
+  --bg:        #131f18;
+  --bg-raised: #1c2b22;
   --text:      #f1ece0;
   --text-dim:  #b6c0b5;
   --text-faint: #7c887c;
@@ -45,8 +45,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(120% 70% at 50% -8%, rgba(201, 162, 74, 0.07), transparent 60%),
-    radial-gradient(140% 90% at 50% 115%, rgba(0, 0, 0, 0.4), transparent 65%);
+    radial-gradient(120% 70% at 50% -8%, rgba(201, 162, 74, 0.1), transparent 60%),
+    radial-gradient(140% 90% at 50% 115%, rgba(0, 0, 0, 0.28), transparent 65%);
 }
 
 /* Fine grain for a printed, tactile surface rather than a flat digital gradient */
@@ -525,7 +525,7 @@ header, main, footer { position: relative; z-index: 1; }
   width: 100%;
   height: clamp(320px, 46vw, 560px);
   object-fit: cover;
-  filter: grayscale(0.25) sepia(0.12) saturate(1.05) brightness(0.82) contrast(1.05);
+  filter: grayscale(0.25) sepia(0.12) saturate(1.05) brightness(0.95) contrast(1.05);
 }
 
 .feature-photo::before {
