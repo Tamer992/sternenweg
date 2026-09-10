@@ -315,12 +315,14 @@ header, main, footer { position: relative; z-index: 1; }
 .hero__zodiac .fade-fill { opacity: 0; }
 .hero__zodiac .ring-rotate { transform-origin: 200px 200px; }
 .hero__zodiac .wheel-rotate { transform-origin: 200px 200px; }
+.hero__zodiac .planet-rotate { transform-origin: 200px 200px; }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero__zodiac .draw { animation: chartDraw 1s var(--ease) forwards; }
   .hero__zodiac .fade-fill { animation: chartFade 0.8s var(--ease) forwards; }
   .hero__zodiac .ring-rotate { animation: chartSpin 240s linear infinite; }
   .hero__zodiac .wheel-rotate { animation: chartSpin 340s linear infinite reverse; }
+  .hero__zodiac .planet-rotate { animation: chartSpin 170s linear infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__zodiac .draw { stroke-dashoffset: 0; }
